@@ -16,4 +16,10 @@ Mewanty::Application.routes.draw do
 
   resources :authentications, only: [:index, :create, :destroy]
   match '/auth/:provider/callback' => 'authentications#create', via: [:post, :get]
+
+  namespace :api do
+    resources :products do
+      post 'vote_by'
+    end
+  end
 end

@@ -14,6 +14,12 @@
 class Product < ActiveRecord::Base
 	has_many :product_categories, :dependent => :destroy
     has_many :categories, :through => :product_categories
-
+    acts_as_votable
     mount_uploader :image, AvatarUploader
+    before_create :generate_slug
+
+    def generate_slug
+    	self.slug = "#{self.id}-#{self.name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}"
+    end
+
 end

@@ -52,3 +52,4 @@ gem 'pry'
 gem "carrierwave", "~> 0.10.0"
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 gem "seed_dump"
+gem 'acts_as_votable', '~> 0.9.0'

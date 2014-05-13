@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   	devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
     has_many :authentications
     mount_uploader :avatar, AvatarUploader
-    
+    acts_as_voter
     def apply_omniauth(omniauth)
 		if omniauth[:provider] == 'facebook'
 			self.email = omniauth[:extra][:raw_info][:email] if self.email.blank?
@@ -59,5 +59,9 @@ class User < ActiveRecord::Base
 			name += self.last_name.titlecase
 		end
 		name
+	end
+
+	def voted product
+		(self.voted_up_on? product) ? "like" : "dislike"
 	end
 end
