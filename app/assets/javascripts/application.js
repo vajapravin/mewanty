@@ -17,3 +17,5 @@
 //= require masonry.pkgd.min.js
 //= require imagesloaded.pkgd.min.js
 //= require custom.js
+//= require post_facebook.js
+//= require post_twitter.js

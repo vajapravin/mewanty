@@ -26,4 +26,10 @@ module ApplicationHelper
 		return true if user_signed_in? && current_user.is_admin
 		return false
 	end
+
+	def escapeHTML content
+		c = content.gsub("'","&#39;")
+		return c.gsub('"','&#34;')
+	end
+
 end

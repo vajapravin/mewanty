@@ -1,0 +1,25 @@
+development: &defaults
+  app_id: 117063451793549
+  client_secret: c17163181493c46c2040ca00fad24dde
+  perms: manage_pages, offline_access
+  page_id: 127954997284961
+  user_id: 1363125970
+  
+test:
+  <<: *defaults
+
+production:
+  app_id: 117063451793549
+  client_secret: c17163181493c46c2040ca00fad24dde
+  perms: manage_pages, offline_access
+  page_id: 127954997284961
+  user_id: 1363125970
+  
+  
+sheetsdev:
+  app_id: 524513770905008
+  client_secret: 4a245bc2b9909f8cf9e466280d0885d3
+  perms: manage_pages, offline_access
+  page_id: 127954997284961
+  user_id: 1363125970
+  

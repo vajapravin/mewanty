@@ -42,7 +42,8 @@
 							</a>
 						</span>
 						<div class="social pull-right">
-							<%= link_to "<i class='fa fa-facebook'></i>".html_safe, "#" %> <%= link_to "<i class='fa fa-twitter'></i>".html_safe, "#" %>
+							<%= link_to_function "<i class='fa fa-facebook'></i>".html_safe, "postFacebook('http://#{self.request.host}/products/#{product.id}','http://#{self.request.host}#{product.image}', '#{escapeHTML(product.name)}', '#{escapeHTML(product.desc)}')" %> 
+							<%= link_to_function "<i class='fa fa-twitter'></i>".html_safe, "return popitup('http://twitter.com/share?url=http://#{self.request.host}/products/#{product.id}&text=#{escapeHTML(product.name)}&via=MeWanty&count=horizontal')", target: "_blank", rel: "nofollow"  %>
 						</div>
 					</footer>
 
