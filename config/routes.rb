@@ -10,9 +10,9 @@ Mewanty::Application.routes.draw do
   resources :products
 
   resources :users do
-    get "profile", :on => :collection
     post "save_profile", :on => :collection
   end
+  get "/user/profile" => "users#profile"
 
   resources :authentications, only: [:index, :create, :destroy]
   match '/auth/:provider/callback' => 'authentications#create', via: [:post, :get]

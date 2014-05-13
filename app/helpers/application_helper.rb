@@ -14,6 +14,7 @@ module ApplicationHelper
         _nav << "</ul>"
 		_nav << "<ul class='nav navbar-nav navbar-right'>"
         if user_signed_in?
+          _nav << "<li><a href='/user/profile'>Profile</a></li>"
           _nav << "<li><a href='#{destroy_user_session_path}' data-method='delete'>Logout</a></li>"
         else
           _nav << "<li><a href='/users/sign_in'>Login</a></li>"
