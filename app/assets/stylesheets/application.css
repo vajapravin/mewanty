@@ -11,4 +11,6 @@
  *= require_self
  *= require bootstrap.min.css
  *= require style.css
+ *= require docs.min.css
+ *= require chosen.css
  */

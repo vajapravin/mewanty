@@ -1,11 +1,15 @@
 Mewanty::Application.routes.draw do
+  resources :categories
+
   root to: "home#index"
 
   devise_for :users, :controllers => {:registrations => 'registrations'} do
-	 get 'logout' => 'devise/sessions#destroy'   
+    get 'logout' => 'devise/sessions#destroy'
   end
 
-  resources :users do    
+  resources :products
+
+  resources :users do
     get "profile", :on => :collection
     post "save_profile", :on => :collection
   end

@@ -25,10 +25,10 @@
 class User < ActiveRecord::Base
   	# Include default devise modules. Others available are:
   	# :confirmable, :lockable, :timeoutable and :omniauthable
-  	devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  	devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
     has_many :authentications
-
+    mount_uploader :avatar, AvatarUploader
+    
     def apply_omniauth(omniauth)
 		if omniauth[:provider] == 'facebook'
 			self.email = omniauth[:extra][:raw_info][:email] if self.email.blank?
@@ -60,5 +60,4 @@ class User < ActiveRecord::Base
 		end
 		name
 	end
-
 end
