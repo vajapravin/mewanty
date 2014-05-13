@@ -51,3 +51,4 @@ gem "annotate", "~> 2.6.1"
 gem 'pry'
 gem "carrierwave", "~> 0.10.0"
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
+gem "seed_dump"

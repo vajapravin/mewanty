@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap.min.js
 //= require chosen.jquery.min.js
+//= require masonry.pkgd.min.js
+//= require imagesloaded.pkgd.min.js
 //= require custom.js
